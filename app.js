@@ -1,70 +1,80 @@
 console.log("Node JS Lab 04");
 
 //read file
-const fs = require('fs');
+//const fs = require('fs');
 
-fs.readFile('file.txt', 'utf8', function (err, data) {
-  if (err) throw err;
-  console.log(data);
-});
+//fs.readFile('file.txt', 'utf8', function (err, data) {
+//  if (err) throw err;
+//  console.log(data);
+//});
 
 //write file
-const fs = require('fs');
+//const fs = require('fs');
 
-fs.writeFile('file.txt', 'Hello World!', function (err) {
-  if (err) throw err;
-  console.log('File saved!');
-});
+//fs.writeFile('file.txt', 'Hello World!', function (err) {
+ // if (err) throw err;
+ // console.log('File saved!');
+//});
 
 //web server
-const http = require('http');
+//const http = require('http');
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello World!');
-  res.end();
-}).listen(8080);
+//http.createServer(function (req, res) {
+//  res.writeHead(200, {'Content-Type': 'text/html'});
+//  res.write('Hello World!');
+//  res.end();
+//}).listen(8080);
 
-console.log("Server running on port 8080");
+//console.log("Server running on port 8080");
 
 //Http request
-const https = require('https'); 
-https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => { 
-  let data = ''; 
+//const https = require('https'); 
+//https.get('https://jsonplaceholder.typicode.com/posts/1', (resp) => { 
+//  let data = ''; 
  
-  resp.on('data', (chunk) => { 
-    data += chunk; 
-  }); 
+ // resp.on('data', (chunk) => { 
+ //   data += chunk; 
+ // }); 
  
-  resp.on('end', () => { 
-    console.log(JSON.parse(data)); 
-  }); 
-}).on('error', (err) => { 
-  console.log("Error: " + err.message); 
-}); 
+ // resp.on('end', () => { 
+ //   console.log(JSON.parse(data)); 
+ // }); 
+//}).on('error', (err) => { 
+ // console.log("Error: " + err.message); 
+//}); 
 
 //module
-const myModule = require('./my-module.js');
+//const myModule = require('./my-module.js');
 
-console.log(myModule.myFunction());
+//console.log(myModule.myFunction());
 
 //Promises
-console.log("Example 6 - Promises");
+//const myPromise = new Promise((resolve, reject) => {
+ // const condition = true; 
 
-const myPromise = new Promise((resolve, reject) => {
-  const condition = true; // change to false to test reject
+ // if (condition) {
+ //   resolve("Success!");
+ // } else {
+ //   reject("Failure!");
+ //}
+//});
 
-  if (condition) {
-    resolve("Success!");
-  } else {
-    reject("Failure!");
-  }
-});
+//myPromise
+  //.then((result) => {
+ //   console.log(result);
+ // })
+//  .catch((error) => {
+ //   console.log(error);
+ // });
 
-myPromise
-  .then((result) => {
-    console.log("Resolved:", result);
-  })
-  .catch((error) => {
-    console.log("Rejected:", error);
-  });
+//Async/Await
+async function myFunction() { 
+  try { 
+    const result = await myPromise; 
+    console.log(result); 
+  } catch (error) { 
+    console.log(error); 
+  } 
+} 
+ 
+myFunction(); 
