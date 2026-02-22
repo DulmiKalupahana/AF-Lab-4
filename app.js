@@ -1,1 +1,9 @@
-console.log("Node JS Lab 04 Working!");
+console.log("Node JS Lab 04");
+
+//read file
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', function (err, data) {
+  if (err) throw err;
+  console.log(data);
+});
